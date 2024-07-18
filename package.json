@@ -1,0 +1,7 @@
+{
+    "name": "yh-yjq",
+    "private": true,
+    "workspaces": {
+      "packages": ["packages/*"]
+    }
+  }
