@@ -11,8 +11,8 @@ export default defineConfig({
   // 服务
   server: {
     proxy: {
-      '/bff/v4.0/': {
-        target: 'http://192.168.1.164:3000',
+      '/yh': {
+        target: 'http://192.168.5.58:9050',
         changeOrigin: true
       },
 
@@ -20,11 +20,6 @@ export default defineConfig({
         target: 'http://192.168.1.164:3000',
         changeOrigin: true
       }
-
-      // '/socket.io': {
-      //   target: 'ws://localhost:3000',
-      //   ws: true
-      // }
     }
   },
 

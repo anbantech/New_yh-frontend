@@ -1,0 +1,456 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body,
+  div,
+  span,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  :root {
+    --ab-neutral-light: 255, 255, 255;
+    --ab-neutral-dark: 0, 0, 0;
+    --ab-neutral-100: 250, 250, 250;
+    --ab-neutral-200: 245, 245, 245;
+    --ab-neutral-300: 240, 240, 240;
+    --ab-neutral-400: 217, 217, 217;
+    --ab-neutral-500: 191, 191, 191;
+    --ab-neutral-600: 140, 140, 140;
+    --ab-neutral-700: 89, 89, 89;
+    --ab-neutral-800: 67, 67, 67;
+    --ab-neutral-900: 38, 38, 38;
+    --ab-neutral-1000: 20, 20, 20;
+
+    /* Text Colors */
+    --ab-text-light: 255, 255, 255;
+    --ab-text-dark: 17, 17, 17;
+    --ab-text-100: 245, 245, 245;
+    --ab-text-200: 239, 239, 239;
+    --ab-text-300: 221, 221, 221;
+    --ab-text-400: 204, 204, 204;
+    --ab-text-500: 153, 153, 153;
+    --ab-text-600: 102, 102, 102;
+    --ab-text-700: 51, 51, 51;
+    --ab-text-800: 34, 34, 34;
+  
+
+    /* Border Colors */
+    --ab-border-100: 240, 240, 240;
+    --ab-border-200: 217, 217, 217;
+    --ab-border-300: 191, 191, 191;
+    --ab-border-400: 58, 58, 58;
+    --ab-border-500: 42, 42, 42;
+    --ab-border-600: 26, 26, 26;
+
+    /* Background Colors */
+    --ab-background-light: 255, 255, 255;
+    --ab-background-dark: 17, 17, 17;
+    --ab-background-100: 250, 250, 250;
+    --ab-background-200: 245, 245, 245;
+    --ab-background-300: 240, 240, 240;
+    --ab-background-400: 217, 217, 217;
+    --ab-background-500: 85, 85, 85;
+    --ab-background-600: 68, 68, 68;
+    --ab-background-700: 51, 51, 51;
+    --ab-background-800: 34, 34, 34;
+
+    /* Primary Colors */
+    --ab-primary-100: 230, 246, 255;
+    --ab-primary-200: 163, 218, 255;
+    --ab-primary-300: 122, 198, 255;
+    --ab-primary-400: 82, 174, 255;
+    --ab-primary-500: 41, 148, 255;
+    --ab-primary-600: 0, 119, 255;
+    --ab-primary-700: 0, 94, 217;
+    --ab-primary-800: 0, 71, 179;
+    --ab-primary-900: 0, 51, 140;
+    --ab-primary-1000: 0, 34, 102;
+
+    /* Success Colors */
+    --ab-success-100: 230, 255, 237;
+    --ab-success-200: 184, 255, 206;
+    --ab-success-300: 136, 242, 173;
+    --ab-success-400: 92, 230, 145;
+    --ab-success-500: 52, 217, 121;
+    --ab-success-600: 17, 204, 102;
+    --ab-success-700: 5, 166, 83;
+    --ab-success-800: 0, 128, 66;
+    --ab-success-900: 0, 89, 49;
+    --ab-success-1000: 0, 51, 30;
+
+    /* Warning Colors */
+    --ab-warning-100: 255, 252, 230;
+    --ab-warning-200: 255, 243, 163;
+    --ab-warning-300: 255, 233, 122;
+    --ab-warning-400: 255, 220, 82;
+    --ab-warning-500: 255, 205, 41;
+    --ab-warning-600: 255, 187, 0;
+    --ab-warning-700: 217, 152, 0;
+    --ab-warning-800: 179, 119, 0;
+    --ab-warning-900: 140, 89, 0;
+    --ab-warning-1000: 102, 61, 0;
+
+    /* Error Colors */
+    --ab-error-100: 255, 241, 240;
+    --ab-error-200: 255, 233, 232;
+    --ab-error-300: 255, 192, 191;
+    --ab-error-400: 255, 150, 152;
+    --ab-error-500: 255, 110, 117;
+    --ab-error-600: 255, 68, 85;
+    --ab-error-700: 217, 48, 67;
+    --ab-error-800: 179, 30, 53;
+    --ab-error-900: 140, 17, 39;
+    --ab-error-1000: 102, 11, 31;
+
+    /* Support Colors */
+    --ab-support-100: 247, 230, 255;
+    --ab-support-200: 224, 163, 255;
+    --ab-support-300: 206, 122, 255;
+    --ab-support-400: 186, 82, 255;
+    --ab-support-500: 162, 41, 255;
+    --ab-support-600: 136, 0, 255;
+    --ab-support-700: 108, 0, 217;
+    --ab-support-800: 83, 0, 179;
+    --ab-support-900: 61, 0, 140;
+    --ab-support-1000: 41, 0, 102;
+
+    --ab-opacity-dark-50: 0, 0, 0;
+    --ab-opacity-dark-150: 0, 0, 0;
+    --ab-opacity-dark-500: 0, 0, 0;
+    --ab-opacity-light-50: 255, 255, 255;
+    --ab-opacity-light-150: 255, 255, 255;
+    --ab-opacity-light-500: 255, 255, 255;
+  }
+
+  .theme-light {
+    --ab-neutral-light: 255, 255, 255;
+    --ab-neutral-dark: 0, 0, 0;
+    --ab-neutral-100: 250, 250, 250;
+    --ab-neutral-200: 245, 245, 245;
+    --ab-neutral-300: 240, 240, 240;
+    --ab-neutral-400: 217, 217, 217;
+    --ab-neutral-500: 191, 191, 191;
+    --ab-neutral-600: 140, 140, 140;
+    --ab-neutral-700: 89, 89, 89;
+    --ab-neutral-800: 67, 67, 67;
+    --ab-neutral-900: 38, 38, 38;
+    --ab-neutral-1000: 20, 20, 20;
+    /* Text Colors */
+    --ab-text-light: 255, 255, 255;
+    --ab-text-dark: 17, 17, 17;
+    --ab-text-100: 245, 245, 245;
+    --ab-text-200: 239, 239, 239;
+    --ab-text-300: 221, 221, 221;
+    --ab-text-400: 204, 204, 204;
+    --ab-text-500: 153, 153, 153;
+    --ab-text-600: 102, 102, 102;
+    --ab-text-700: 51, 51, 51;
+    --ab-text-800: 34, 34, 34;
+
+    /* Border Colors */
+    --ab-border-100: 240, 240, 240;
+    --ab-border-200: 217, 217, 217;
+    --ab-border-300: 191, 191, 191;
+    --ab-border-400: 58, 58, 58;
+    --ab-border-500: 42, 42, 42;
+    --ab-border-600: 26, 26, 26;
+
+    /* Background Colors */
+    --ab-background-light: 255, 255, 255;
+    --ab-background-dark: 17, 17, 17;
+    --ab-background-100: 250, 250, 250;
+    --ab-background-200: 245, 245, 245;
+    --ab-background-300: 240, 240, 240;
+    --ab-background-400: 217, 217, 217;
+    --ab-background-500: 85, 85, 85;
+    --ab-background-600: 68, 68, 68;
+    --ab-background-700: 51, 51, 51;
+    --ab-background-800: 34, 34, 34;
+
+    /* Primary Colors */
+    --ab-primary-100: 230, 246, 255;
+    --ab-primary-200: 163, 218, 255;
+    --ab-primary-300: 122, 198, 255;
+    --ab-primary-400: 82, 174, 255;
+    --ab-primary-500: 41, 148, 255;
+    --ab-primary-600: 0, 119, 255;
+    --ab-primary-700: 0, 94, 217;
+    --ab-primary-800: 0, 71, 179;
+    --ab-primary-900: 0, 51, 140;
+    --ab-primary-1000: 0, 34, 102;
+
+    /* Success Colors */
+    --ab-success-100: 230, 255, 237;
+    --ab-success-200: 184, 255, 206;
+    --ab-success-300: 136, 242, 173;
+    --ab-success-400: 92, 230, 145;
+    --ab-success-500: 52, 217, 121;
+    --ab-success-600: 17, 204, 102;
+    --ab-success-700: 5, 166, 83;
+    --ab-success-800: 0, 128, 66;
+    --ab-success-900: 0, 89, 49;
+    --ab-success-1000: 0, 51, 30;
+
+    /* Warning Colors */
+    --ab-warning-100: 255, 252, 230;
+    --ab-warning-200: 255, 243, 163;
+    --ab-warning-300: 255, 233, 122;
+    --ab-warning-400: 255, 220, 82;
+    --ab-warning-500: 255, 205, 41;
+    --ab-warning-600: 255, 187, 0;
+    --ab-warning-700: 217, 152, 0;
+    --ab-warning-800: 179, 119, 0;
+    --ab-warning-900: 140, 89, 0;
+    --ab-warning-1000: 102, 61, 0;
+
+    /* Error Colors */
+    --ab-error-100: 255, 241, 240;
+    --ab-error-200: 255, 233, 232;
+    --ab-error-300: 255, 192, 191;
+    --ab-error-400: 255, 150, 152;
+    --ab-error-500: 255, 110, 117;
+    --ab-error-600: 255, 68, 85;
+    --ab-error-700: 217, 48, 67;
+    --ab-error-800: 179, 30, 53;
+    --ab-error-900: 140, 17, 39;
+    --ab-error-1000: 102, 11, 31;
+
+    /* Support Colors */
+    --ab-support-100: 247, 230, 255;
+    --ab-support-200: 224, 163, 255;
+    --ab-support-300: 206, 122, 255;
+    --ab-support-400: 186, 82, 255;
+    --ab-support-500: 162, 41, 255;
+    --ab-support-600: 136, 0, 255;
+    --ab-support-700: 108, 0, 217;
+    --ab-support-800: 83, 0, 179;
+    --ab-support-900: 61, 0, 140;
+    --ab-support-1000: 41, 0, 102;
+
+    --ab-opacity-dark-50: 0, 0, 0, 0.05;
+    --ab-opacity-dark-150: 0, 0, 0, 0.15;
+    --ab-opacity-dark-500: 0, 0, 0, 0.5;
+    --ab-opacity-light-50: 255, 255, 255, 0.05;
+    --ab-opacity-light-150: 255, 255, 255, 0.15;
+    --ab-opacity-light-500: 255, 255, 255, 0.5;
+  }
+
+  .theme-dark {
+    /* Dark Mode */
+
+    /* Neutral Colors */
+    --ab-neutral-light: 30, 30, 30;
+    --ab-neutral-dark: 255, 255, 255;
+    --ab-neutral-100: 37, 37, 37;
+    --ab-neutral-200: 45, 45, 45;
+    --ab-neutral-300: 67, 67, 67;
+    --ab-neutral-400: 89, 89, 89;
+    --ab-neutral-500: 140, 140, 140;
+    --ab-neutral-600: 191, 191, 191;
+    --ab-neutral-700: 217, 217, 217;
+    --ab-neutral-800: 240, 240, 240;
+    --ab-neutral-900: 245, 245, 245;
+    --ab-neutral-1000: 250, 250, 250;
+
+    /* Text Colors */
+    --ab-text-light: 17, 17, 17;
+    --ab-text-dark: 255, 255, 255;
+    --ab-text-100: 51, 51, 51;
+    --ab-text-200: 68, 68, 68;
+    --ab-text-300: 102, 102, 102;
+    --ab-text-400: 153, 153, 153;
+    --ab-text-500: 204, 204, 204;
+    --ab-text-600: 221, 221, 221;
+    --ab-text-700: 239, 239, 239;
+    --ab-text-800: 245, 245, 245;
+
+    /* Border Colors */
+    --ab-border-100: 42, 42, 42;
+    --ab-border-200: 58, 58, 58;
+    --ab-border-300: 74, 74, 74;
+    --ab-border-400: 191, 191, 191;
+    --ab-border-500: 217, 217, 217;
+    --ab-border-600: 240, 240, 240;
+
+    /* Background Colors */
+    --ab-background-light: 0, 0, 0;
+    --ab-background-dark: 255, 255, 255;
+    --ab-background-100: 13, 13, 13;
+    --ab-background-200: 13, 13, 13;
+    --ab-background-300: 68, 68, 68;
+    --ab-background-400: 85, 85, 85;
+    --ab-background-500: 217, 217, 217;
+    --ab-background-600: 240, 240, 240;
+    --ab-background-700: 245, 245, 245;
+    --ab-background-800: 250, 250, 250;
+
+    /* Primary Colors */
+    --ab-primary-100: 0, 34, 102;
+    --ab-primary-200: 0, 51, 140;
+    --ab-primary-300: 0, 71, 179;
+    --ab-primary-400: 0, 94, 217;
+    --ab-primary-500: 0, 119, 255;
+    --ab-primary-600: 41, 148, 255;
+    --ab-primary-700: 82, 174, 255;
+    --ab-primary-800: 122, 198, 255;
+    --ab-primary-900: 163, 218, 255;
+    --ab-primary-1000: 230, 246, 255;
+
+    /* Success Colors */
+    --ab-success-100: 0, 51, 30;
+    --ab-success-200: 0, 89, 49;
+    --ab-success-300: 0, 128, 66;
+    --ab-success-400: 5, 166, 83;
+    --ab-success-500: 17, 204, 102;
+    --ab-success-600: 52, 217, 121;
+    --ab-success-700: 92, 230, 145;
+    --ab-success-800: 136, 242, 173;
+    --ab-success-900: 184, 255, 206;
+    --ab-success-1000: 230, 255, 237;
+
+    /* Warning Colors */
+    --ab-warning-100: 102, 61, 0;
+    --ab-warning-200: 140, 89, 0;
+    --ab-warning-300: 179, 119, 0;
+    --ab-warning-400: 217, 152, 0;
+    --ab-warning-500: 255, 187, 0;
+    --ab-warning-600: 255, 205, 41;
+    --ab-warning-700: 255, 220, 82;
+    --ab-warning-800: 255, 233, 122;
+    --ab-warning-900: 255, 243, 163;
+    --ab-warning-1000: 255, 252, 230;
+
+    /* Error Colors */
+    --ab-error-100: 102, 11, 31;
+    --ab-error-200: 140, 17, 39;
+    --ab-error-300: 179, 30, 53;
+    --ab-error-400: 217, 48, 67;
+    --ab-error-500: 255, 68, 85;
+    --ab-error-600: 255, 110, 117;
+    --ab-error-700: 255, 150, 152;
+    --ab-error-800: 255, 192, 191;
+    --ab-error-900: 255, 233, 232;
+    --ab-error-1000: 255, 241, 240;
+
+    /* Support Colors */
+    --ab-support-100: 41, 0, 102;
+    --ab-support-200: 61, 0, 140;
+    --ab-support-300: 83, 0, 179;
+    --ab-support-400: 108, 0, 217;
+    --ab-support-500: 136, 0, 255;
+    --ab-support-600: 162, 41, 255;
+    --ab-support-700: 186, 82, 255;
+    --ab-support-800: 206, 122, 255;
+    --ab-support-900: 224, 163, 255;
+    --ab-support-1000: 247, 230, 255;
+
+    /* Opacity Values */
+    --ab-opacity-dark-50: 255, 255, 255, 0.05;
+    --ab-opacity-dark-150: 255, 255, 255, 0.15;
+    --ab-opacity-dark-500: 255, 255, 255, 0.5;
+    --ab-opacity-light-50: 0, 0, 0, 0.05;
+    --ab-opacity-light-150: 0, 0, 0, 0.15;
+    --ab-opacity-light-500: 0, 0, 0, 0.5;
+  }
+}
+
+.ant-modal-content {
+  border-radius: 2px !important;
+  padding: 0px !important;
+}
+
+.ant-input-affix-wrapper,
+.ant-input,
+.ant-input-number-input,
+.ant-input-number,
+.ant-select-selector {
+  border-radius: 2px !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track-piece {
+  border-radius: 2px 2px 0px 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--ab-neutral-400), 0.7);
+  border-radius: 6px;
+}

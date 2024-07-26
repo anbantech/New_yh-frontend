@@ -1,11 +1,13 @@
-import './App.css'
+import { ConfigProvider } from 'antd'
+
+import antdConfig from '@/antdConfig'
+import Routes from '@/router/routers'
 
 function App() {
   return (
-    <div>
-      {' '}
-      <span> 2121 </span>
-    </div>
+    <ConfigProvider {...antdConfig}>
+      <Routes />
+    </ConfigProvider>
   )
 }
 
