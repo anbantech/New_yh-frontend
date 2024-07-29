@@ -2,7 +2,13 @@ export interface loginPersistStoreType {
   account: null | string
   AuthToken: null | string
   removeUserInfo: () => void
-  setUserInfo: (account: string, token: string) => void
+  setUserInfo: (
+    isHasPerms: string,
+    secondPermsMenu: permissionType[],
+    thirdPermsMenu: permissionType[],
+    account: string,
+    token: string
+  ) => void
 }
 
 export interface loginStoreType {
@@ -15,3 +21,5 @@ export interface loginStoreType {
     password: string
   }) => Promise<unknown>
 }
+
+export type permissionType = { id: string; permissionName: string }

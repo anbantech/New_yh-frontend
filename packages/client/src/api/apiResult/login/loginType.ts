@@ -5,9 +5,48 @@ export interface loginInParams {
   password: string
 }
 
+type permsType = {
+  path?: 'string'
+  createBy: number
+  updateAt: string
+  id: string
+  platformName: string
+  type: number
+  enableFlag: number
+  createAt: string
+  parentId: string
+  permissionName: string
+}
+
 export interface loginInResponse {
-  access_token: string
-  id: string // id 长度超过 MAX_SAFE_VALUE 改为使用字符串存储
-  roles: string[]
-  account: string
+  token: string
+  environment: string
+  loginPlatform: number
+  expireAt: null | number
+  collection: {
+    roles: null | string
+    perms: {
+      '0': permsType[]
+      '1': permsType[]
+      '2': permsType[]
+      '3': permsType[]
+    }
+  }
+  user: {
+    id: number
+    account: string
+    username: string
+    companyName: null | string
+    jobNumber: string
+    phone: string
+    email: string
+    enableFlag: number
+    status: number
+    avatar: null | number | string
+    expireAt: string
+    createAt: string
+    createBy: string
+    updateAt: null | string
+    updateBy: null | string
+  }
 }

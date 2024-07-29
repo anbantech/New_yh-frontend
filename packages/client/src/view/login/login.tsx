@@ -1,6 +1,7 @@
 import { Button, Form, Input } from 'antd'
 import md5 from 'js-md5'
 import React, { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 // import { useLogoAndDescription } from '@/api/apiSwr/globalSwr'
 import loginLeftImg from '@/assets/loginLeftImg.png'
@@ -19,7 +20,7 @@ const LoginLeft: React.FC<LoginProps> = (props: LoginProps) => {
     if (logo) return logo
   }, [logo])
   return (
-    <div className='width-[36%] h-scree relative'>
+    <div className='w-[36%] h-scree relative'>
       <img src={loginLeftImg} alt='' className='w-full h-screen' />
       <div className='w-full p-[80px] absolute top-0 flex flex-col'>
         <img src={logoImg} alt='' className='w-[144px] h-[32px]' />
@@ -36,17 +37,21 @@ const LoginRight: React.FC<{ productName: string | null }> = (props: {
 }) => {
   const [form] = Form.useForm()
   const { productName } = props
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const loading = LoginStore(state => state.loading)
 
   const onFinish = async (values: { account: string; password: string }) => {
-    await LoginStore.getState().login({
+    const res = await LoginStore.getState().login({
       account: values.account,
       password: md5(values.password + 'anban'),
       loginPlatform: 0, // platformEnum: 0 for pc, 1 for app; Since this is a web page, it is always 0
       organizationId: 'yh'
     })
+
+    if (res) {
+      return navigate('/project')
+    }
   }
 
   return (
@@ -129,9 +134,8 @@ const LoginRight: React.FC<{ productName: string | null }> = (props: {
 const LoginRightMemo = React.memo(LoginRight)
 
 const LoginIndex: React.FC = () => {
-  const { icon, productDesc, productName, firm, logo, report, enable } =
-    setCopyWritingPersistStore.getState()
-  console.log(icon, firm, report, enable)
+  const { productDesc, productName, logo } = setCopyWritingPersistStore.getState()
+
   return (
     <div className='flex'>
       <LoginLeftMemo logo={logo} productName={productName} productDesc={productDesc} />

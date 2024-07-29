@@ -4,15 +4,25 @@ import { persist } from 'zustand/middleware'
 
 import { loginIn } from '@/api/apiResult/login/login'
 
-import { loginPersistStoreType, loginStoreType } from './loginStoreType'
+import { loginPersistStoreType, loginStoreType, permissionType } from './loginStoreType'
 
 export const LoginPersistStore = create<loginPersistStoreType>()(
   persist(
     set => ({
       account: null,
       AuthToken: null,
+      isHasPerms: null,
+      secondPermsMenu: [],
+      thirdPermsMenu: [],
       removeUserInfo: () => set(() => ({ account: null, AuthToken: null })),
-      setUserInfo: (account, token) => set(() => ({ account: account, AuthToken: token }))
+      setUserInfo: (isHasPerms, secondPermsMenu, thirdPermsMenu, account, token) =>
+        set(() => ({
+          isHasPerms,
+          secondPermsMenu,
+          thirdPermsMenu,
+          account: account,
+          AuthToken: token
+        }))
     }),
     {
       name: 'login' // name of the item in the storage (must be unique)
@@ -29,8 +39,30 @@ export const LoginStore = create<loginStoreType>((set, get) => ({
     get().toggleLoading()
     try {
       const res = await loginIn(params)
-      if (res.account) {
-        LoginPersistStore.getState().setUserInfo(res.account, res.access_token)
+      if (res) {
+        const { token, user } = res
+        const { account } = user
+        const isHasPerms = res.collection.perms['1'][0].id
+        const secondPermsMenu = [] as permissionType[]
+        const thirdPermsMenu = [] as permissionType[]
+        const perms = res.collection.perms
+        for (const key in perms) {
+          perms[key as keyof typeof perms].forEach(perm => {
+            const permObject = { id: perm.id, permissionName: perm.permissionName }
+            if (perm.type === 2) {
+              secondPermsMenu.push(permObject)
+            } else if (perm.type === 3) {
+              thirdPermsMenu.push(permObject)
+            }
+          })
+        }
+        LoginPersistStore.getState().setUserInfo(
+          isHasPerms,
+          secondPermsMenu,
+          thirdPermsMenu,
+          account,
+          token
+        )
       }
       get().toggleLoading()
       return res

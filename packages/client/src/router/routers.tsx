@@ -20,7 +20,7 @@ export const AuthTokenComponents = ({ children }: AuthTokenComponentsProps) => {
 
 const IndexRouter = () => {
   const { AuthToken } = LoginPersistStore.getState()
-  return AuthToken ? <Navigate to='/projects' replace /> : <Navigate to='/login' replace />
+  return AuthToken ? <Navigate to='/project' replace /> : <Navigate to='/login' replace />
 }
 
 const router = createBrowserRouter([

@@ -17,6 +17,20 @@ const LeftMenu = [
   { pathName: '/messageNotification', title: '站内信', icon: MailOutlined }
 ]
 
+const permsMenu1 = ['337b1f3fe0e042f0ab374c57a8e93305', '3422d6600ee940b9b59b0ae90acf121']
+
+const permsMenu2 = ['9529d6600ee940b9b59b0ae90acfbded', 'bde97dad5e404c5dbba32a15bd310635']
+
+const permsMenu3 = [
+  '872h6s22326600ee940b9b59b0sdj8',
+  'ms122326600ee940b9b59b0sdj8221',
+  'uus22326600ee940b9b59b0sdj82bg',
+  '09sdd6600ee940b9b59b0ae9ssf1sda',
+  '6shsbs22326600ee940b9b59b0s2sss',
+  'sad21326600ee940b9b59b0ae900sjs',
+  '1011d6600ee940b9b59b0ae90acf7786'
+]
+
 // 获取状态参数配置
 
 const setCopyWritingPersistStore = create<SystemType>()(
@@ -50,4 +64,4 @@ const setCopyWritingPersistStore = create<SystemType>()(
   )
 )
 
-export { LeftMenu, setCopyWritingPersistStore }
+export { LeftMenu, permsMenu1, permsMenu2, permsMenu3, setCopyWritingPersistStore }
