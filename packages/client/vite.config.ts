@@ -1,6 +1,5 @@
-import path from 'path'
-
 import react from '@vitejs/plugin-react-swc'
+import path from 'path'
 import { defineConfig } from 'vite'
 import babel from 'vite-plugin-babel'
 import eslintPlugin from 'vite-plugin-eslint'
@@ -12,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/yh': {
-        target: 'http://192.168.5.58:9050',
+        target: 'http://192.168.1.43:9050',
         changeOrigin: true
       },
 

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import React, { useMemo } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-import { LeftMenu } from '@/store/globalStore'
+import { LeftMenu } from '@/store/globalStore/globalStore'
 
 const selectOrHover = classNames('itemgradient')
 const navItemTitleActive = classNames('navItemTitleActive')

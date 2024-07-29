@@ -3,7 +3,9 @@ import { ReactNode } from 'react'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import LayoutIndex from '@/layout'
+import { LoginPersistStore } from '@/store/loginStore/loginStore'
 import Dashboard from '@/view/dashboard'
+import LoginIndex from '@/view/login/login'
 import Projects from '@/view/projects'
 
 type AuthTokenComponentsProps = {
@@ -11,18 +13,19 @@ type AuthTokenComponentsProps = {
 }
 
 export const AuthTokenComponents = ({ children }: AuthTokenComponentsProps) => {
-  return children
+  const { AuthToken } = LoginPersistStore.getState()
+
+  return AuthToken ? children : <Navigate to='/login' replace />
 }
 
 const IndexRouter = () => {
-  //   const { AuthToken } = LoginPersistStore.getState()
-  return <Navigate to='/dashboard' replace />
+  const { AuthToken } = LoginPersistStore.getState()
+  return AuthToken ? <Navigate to='/projects' replace /> : <Navigate to='/login' replace />
 }
 
 const router = createBrowserRouter([
   { path: '/', element: <IndexRouter /> },
-
-  { path: '*', element: <div>404</div> },
+  { path: '/login', element: <LoginIndex /> },
   {
     path: '/',
     element: (
@@ -48,7 +51,8 @@ const router = createBrowserRouter([
         )
       }
     ]
-  }
+  },
+  { path: '*', element: <div>404</div> }
 ])
 
 const Routes = () => {

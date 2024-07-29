@@ -2,6 +2,8 @@ import tailwindcss from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
 
 import leftNavItemSelect from './src/layout/components/compoentsStyleSheet'
+import newFlexLayout from './src/styleSheet/flexLayout/flexLayout'
+import newABWidth from './src/styleSheet/width/abWidth'
 
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
@@ -20,7 +22,9 @@ const anbanPlugin = plugin(function ({ addUtilities }) {
   // getConfig: 获取配置项
   // prefix: 前缀函数
   addUtilities({
-    ...leftNavItemSelect
+    ...leftNavItemSelect,
+    ...newFlexLayout,
+    ...newABWidth
   })
 })
 

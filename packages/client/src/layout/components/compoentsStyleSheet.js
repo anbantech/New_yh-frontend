@@ -14,8 +14,8 @@ const leftNavItemSelect = {
       right: '-1px',
       top: '0',
       width: '3px',
-      backgroundColor: 'rgba(var(--ab-primary-600))',
-      animation: 'sideHeight 0.5s forwards'
+      height: '48px',
+      backgroundColor: 'rgba(var(--ab-primary-600))'
     }
   },
   '.navItemTitle': {
