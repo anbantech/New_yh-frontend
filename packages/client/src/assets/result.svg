@@ -1,0 +1,26 @@
+<svg width="180" height="140" viewBox="0 0 180 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="90" cy="70" r="50" fill="#E6F6FF"/>
+<mask id="mask0_4188_11882" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="40" y="20" width="100" height="100">
+<circle cx="90" cy="70" r="50" fill="url(#paint0_linear_4188_11882)"/>
+</mask>
+<g mask="url(#mask0_4188_11882)">
+<path opacity="0.74" d="M90 90L123 73V120H90V90Z" fill="#52AEFF"/>
+<path opacity="0.81" d="M97 99.0909L115 90V100.909L97 110V99.0909Z" fill="white"/>
+<path opacity="0.82" d="M57 73L90 90V120H57V73Z" fill="#7AC6FF"/>
+<path opacity="0.6" d="M123 73L90 56V90L123 73Z" fill="#0077FF"/>
+<path opacity="0.67" d="M57 73L90 56V90L57 73Z" fill="#0077FF"/>
+<path d="M98 37L101 34" stroke="#52AEFF" stroke-width="3" stroke-linecap="square"/>
+<path d="M82 37L79 34" stroke="#52AEFF" stroke-width="3" stroke-linecap="square"/>
+<path d="M90 35L90 30" stroke="#52AEFF" stroke-width="3" stroke-linecap="square"/>
+</g>
+<path opacity="0.82" d="M101.939 104L135 86.9275L123 73L90 90L101.939 104Z" fill="#7AC6FF"/>
+<path opacity="0.82" d="M78.0612 104L45 86.9275L57 73L90 90L78.0612 104Z" fill="#52AEFF"/>
+<path opacity="0.82" d="M123 73L90 56L105.396 51L138 68.0612L123 73Z" fill="#7AC6FF"/>
+<path opacity="0.74" d="M57 73L90 56L74.6038 51L42 68.0612L57 73Z" fill="#52AEFF"/>
+<defs>
+<linearGradient id="paint0_linear_4188_11882" x1="90" y1="20" x2="90" y2="120" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E6EEFE"/>
+<stop offset="1" stop-color="#D7E0F2"/>
+</linearGradient>
+</defs>
+</svg>

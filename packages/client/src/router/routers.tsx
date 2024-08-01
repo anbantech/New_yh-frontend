@@ -4,7 +4,9 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 
 import LayoutIndex from '@/layout'
 import { LoginPersistStore } from '@/store/loginStore/loginStore'
+import ProjectRouterComponents from '@/view/baseRouterComponents/projectRouterComponents'
 import Dashboard from '@/view/dashboard'
+import InstanceIndex from '@/view/instance'
 import LoginIndex from '@/view/login/login'
 import Projects from '@/view/projects'
 
@@ -35,18 +37,36 @@ const router = createBrowserRouter([
     ),
     children: [
       {
+        path: 'project',
+        element: (
+          <AuthTokenComponents>
+            <ProjectRouterComponents />
+          </AuthTokenComponents>
+        ),
+        children: [
+          {
+            index: true,
+            element: (
+              <AuthTokenComponents>
+                <Projects />
+              </AuthTokenComponents>
+            )
+          },
+          {
+            path: 'instance',
+            element: (
+              <AuthTokenComponents>
+                <InstanceIndex />
+              </AuthTokenComponents>
+            )
+          }
+        ]
+      },
+      {
         path: 'dashboard',
         element: (
           <AuthTokenComponents>
             <Dashboard />
-          </AuthTokenComponents>
-        )
-      },
-      {
-        path: 'project',
-        element: (
-          <AuthTokenComponents>
-            <Projects />
           </AuthTokenComponents>
         )
       }

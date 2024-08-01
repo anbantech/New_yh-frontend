@@ -14,7 +14,7 @@ instance.interceptors.request.use(res => {
   // 使用 AuthController 获取 loaclstorage  中的 token
   const { AuthToken } = LoginPersistStore.getState()
   if (AuthToken && !res.url?.includes('login')) {
-    res.headers.Authorization = `Bearer ${AuthToken}`
+    res.headers.Authorization = `${AuthToken}`
   }
   return res
 })

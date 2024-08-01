@@ -10,7 +10,7 @@ export const theme: ConfigProviderProps['theme'] = {
       cellPaddingBlockSM: 5,
       cellPaddingInlineSM: 16,
       headerBg: 'fff',
-      rowHoverBg: 'rgb(var(--ab-primary-200))'
+      rowHoverBg: 'rgb(var(--ab-primary-100))'
     },
     Tabs: {
       horizontalMargin: '0',

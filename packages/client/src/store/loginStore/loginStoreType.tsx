@@ -2,6 +2,9 @@ export interface loginPersistStoreType {
   account: null | string
   AuthToken: null | string
   removeUserInfo: () => void
+  secondPermsMenu: permissionType[]
+  thirdPermsMenu: permissionType[]
+  isHasPerms: string | null
   setUserInfo: (
     isHasPerms: string,
     secondPermsMenu: permissionType[],

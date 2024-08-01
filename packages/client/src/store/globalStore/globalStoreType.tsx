@@ -4,6 +4,7 @@ export interface SystemType {
   productDesc: null | string
   productName: null | string
   logo: null | string
+  pageLogo: null | string
   firm: null | string
   report: null | string
   enable: null | number
@@ -15,7 +16,8 @@ export interface SystemType {
     logo: null | string,
     firm: null | string,
     report: null | string,
-    enable: null | number
+    enable: null | number,
+    pageLogo: null | string
   ) => void
   removeCopyWriting: () => void
 }

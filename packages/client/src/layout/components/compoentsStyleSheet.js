@@ -20,7 +20,8 @@ const leftNavItemSelect = {
   },
   '.navItemTitle': {
     fontSize: '14px' /* text-sm */,
-    fontWeight: '400' /* font-normal */
+    fontWeight: '400' /* font-normal */,
+    fontFamily: 'monospace'
   },
 
   '.navItemTitleActive': {
@@ -43,6 +44,44 @@ const leftNavItemSelect = {
     },
     '100%': {
       paddingBottom: '48px'
+    }
+  },
+  '.sider': {
+    transition: 'width 0.3s linear'
+  },
+
+  '.open': {
+    animation: 'sideOpenWidth 1s forwards'
+  },
+  '.close': {
+    animation: 'sideCloseWidth 1s forwards'
+  },
+
+  '@keyframes sideCloseWidth': {
+    '0%': {
+      width: '240px',
+      opacity: '0'
+    },
+    '50%': {
+      width: '120px'
+    },
+    '100%': {
+      width: '60px',
+      opacity: '1'
+    }
+  },
+
+  '@keyframe sideOpenWidth': {
+    '0%': {
+      width: '60px',
+      opacity: '0'
+    },
+    '50%': {
+      width: '120px'
+    },
+    '100%': {
+      width: '240px',
+      opacity: '1'
     }
   }
 }

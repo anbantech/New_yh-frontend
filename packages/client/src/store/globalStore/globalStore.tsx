@@ -1,3 +1,4 @@
+import { IconCC, IconJava } from '@anban/iconfonts'
 import {
   AppstoreOutlined,
   DashboardOutlined,
@@ -17,19 +18,28 @@ const LeftMenu = [
   { pathName: '/messageNotification', title: '站内信', icon: MailOutlined }
 ]
 
-const permsMenu1 = ['337b1f3fe0e042f0ab374c57a8e93305', '3422d6600ee940b9b59b0ae90acf121']
+const permsMenu1 = ['3422d6600ee940b9b59b0ae90acf121']
 
-const permsMenu2 = ['9529d6600ee940b9b59b0ae90acfbded', 'bde97dad5e404c5dbba32a15bd310635']
+const permsMenu2 = {
+  '9529d6600ee940b9b59b0ae90acfbded': 0,
+  bde97dad5e404c5dbba32a15bd310635: 1
+}
 
-const permsMenu3 = [
-  '872h6s22326600ee940b9b59b0sdj8',
-  'ms122326600ee940b9b59b0sdj8221',
-  'uus22326600ee940b9b59b0sdj82bg',
-  '09sdd6600ee940b9b59b0ae9ssf1sda',
-  '6shsbs22326600ee940b9b59b0s2sss',
-  'sad21326600ee940b9b59b0ae900sjs',
-  '1011d6600ee940b9b59b0ae90acf7786'
-]
+const ProjectIcon = {
+  0: <IconCC style={{ width: '14px', height: '16px', marginRight: '5px' }} />,
+  1: <IconJava style={{ width: '14px', height: '16px', marginRight: '5px' }} />
+}
+
+const permsMenu3 = {
+  '872h6s22326600ee940b9b59b0sdj8': 4,
+  ms122326600ee940b9b59b0sdj8221: 7,
+  uus22326600ee940b9b59b0sdj82bg: 3,
+  '09sdd6600ee940b9b59b0ae9ssf1sda': 1,
+  '6shsbs22326600ee940b9b59b0s2sss': 5,
+  sad21326600ee940b9b59b0ae900sjs: 6,
+  '1011d6600ee940b9b59b0ae90acf7786': 0,
+  '3422d6600ee940b9b59b0ae90acf121s': 2
+}
 
 // 获取状态参数配置
 
@@ -44,8 +54,9 @@ const setCopyWritingPersistStore = create<SystemType>()(
       firm: null,
       report: null,
       enable: null,
-      setCopyWriting: (id, icon, productDesc, productName, firm, logo, report, enable) =>
-        set(() => ({ id, icon, productDesc, productName, firm, logo, report, enable })),
+      pageLogo: null,
+      setCopyWriting: (id, icon, productDesc, productName, firm, logo, report, enable, pageLogo) =>
+        set(() => ({ id, icon, productDesc, productName, firm, logo, report, enable, pageLogo })),
       removeCopyWriting: () =>
         set(() => ({
           id: null,
@@ -55,7 +66,8 @@ const setCopyWritingPersistStore = create<SystemType>()(
           logo: null,
           firm: null,
           report: null,
-          enable: null
+          enable: null,
+          pageLogo: null
         }))
     }),
     {
@@ -64,4 +76,4 @@ const setCopyWritingPersistStore = create<SystemType>()(
   )
 )
 
-export { LeftMenu, permsMenu1, permsMenu2, permsMenu3, setCopyWritingPersistStore }
+export { LeftMenu, permsMenu1, permsMenu2, permsMenu3, ProjectIcon, setCopyWritingPersistStore }

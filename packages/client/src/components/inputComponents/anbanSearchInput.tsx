@@ -1,4 +1,4 @@
-import { IconSearch } from '@anban/iconfonts'
+import { SearchOutlined } from '@ant-design/icons'
 import { useRequest } from 'ahooks'
 import { ConfigProvider, Input } from 'antd'
 import React from 'react'
@@ -41,7 +41,7 @@ const AnBanInput: React.FC<AnBanType> = (props: AnBanType) => {
         placeholder={placeholder}
         allowClear
         onChange={e => run(e.target.value)}
-        prefix={<IconSearch className='text-skin-text-400' />}
+        prefix={<SearchOutlined />}
       />
     </ConfigProvider>
   )

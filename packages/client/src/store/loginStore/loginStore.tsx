@@ -2,7 +2,7 @@ import { message } from 'antd'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-import { loginIn } from '@/api/apiResult/login/login'
+import { loginIn } from '@/api/apiResult/login/loginApi'
 
 import { loginPersistStoreType, loginStoreType, permissionType } from './loginStoreType'
 
@@ -43,6 +43,7 @@ export const LoginStore = create<loginStoreType>((set, get) => ({
         const { token, user } = res
         const { account } = user
         const isHasPerms = res.collection.perms['1'][0].id
+        if (!isHasPerms) return message.error('暂无登录权限,请联系管理员')
         const secondPermsMenu = [] as permissionType[]
         const thirdPermsMenu = [] as permissionType[]
         const perms = res.collection.perms

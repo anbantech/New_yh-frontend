@@ -22,6 +22,7 @@ function findFitCountInPageSizeOptions(
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface AbTableProps<T = any> extends TableProps<T> {
   /**
    * Table id, used to query selector.
