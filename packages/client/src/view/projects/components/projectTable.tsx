@@ -5,6 +5,7 @@ import LinkButton from '@/components/buttonComponents/linkButton'
 import ResultComponents from '@/components/resultComponents/result'
 import AbTable from '@/components/tableComponents/AbTable'
 import { ProjectIcon } from '@/store/globalStore/globalStore'
+import { InstanceStore } from '@/store/instanceStore/instanceStore'
 import { projectConfigStore, projectStore } from '@/store/projectStore/projectStore'
 import { ProjectListItem } from '@/store/projectStore/projectStoreType'
 
@@ -16,6 +17,9 @@ const ProjectTable = () => {
 
   const { setModalStatus, setDeleteModalStatus, setOpenMengent } = projectConfigStore()
 
+  // 获取bugInfo信息
+
+  const { getBugInfo } = InstanceStore()
   // 更新 删除 调用此方法
   const updateOrDelete = (row: ProjectListItem, isUpdate: boolean) => {
     setProjectDetailInfo(row)
@@ -28,7 +32,9 @@ const ProjectTable = () => {
 
   // 项目详情
   const intoInstance = (row: ProjectListItem) => {
-    navigate('/project/instance', { state: row })
+    getBugInfo(row.id).then(() => {
+      navigate('/project/instance', { state: row })
+    })
   }
 
   const columns = [

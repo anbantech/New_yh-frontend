@@ -33,7 +33,7 @@ const IconStyle = classNames('w-[16px]', 'h-[16px]')
 const AssembleNav = () => {
   const { setModalStatus } = projectConfigStore()
   return (
-    <div className='w-full flex items-center justify-between'>
+    <div className='w-full h-[48px] flex items-center justify-between'>
       <span className='h-[24px] block text-base mr-[16px] font-bold text-skin-text-700'>
         {' '}
         项目列表
